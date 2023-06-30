@@ -73,10 +73,18 @@ p {
     justify-content: center;
   }
   .portrait {
-    border: 1px solid black;
+    border: 1px solid #000;
+    display: flex;
     cursor: pointer;
-    height: 105px;
+    height: 80px;
     width: 285px;
     margin-top: 4em;
+    img {
+      min-height: 100%;
+    }
+    p {
+      padding-left: 10px;
+      padding-top: 5px;
+    }
   }
 }
