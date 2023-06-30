@@ -10,9 +10,73 @@ p {
   max-width: 1220px;
   margin: 0 auto;
   .box {
-    border: 1px solid black;
+    cursor: pointer;
     height: 265px;
     width: 185px;
+    margin-top: 4em;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+.manga {
+  max-width: 1220px;
+  margin: 0 auto;
+  .cover {
+    display: grid;
+    grid-column-gap: 30px;
+    grid-template-columns: 215px auto;
+    .description {
+      display: inline-grid;
+      padding-top: 25px;
+      p {
+        line-height: 1.5;
+        margin: 0;
+        max-width: 800px;
+        padding: 15px 0;
+      }
+    }
+    .banner {
+      display: flex;
+      flex-direction: column;
+      button {
+        align-items: center;
+        background-clip: padding-box;
+        background-color: rgb(60, 178, 218);
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+        box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        font-size: 16px;
+        font-weight: 600;
+        justify-content: center;
+        line-height: 1.25;
+        margin: 0 10px;
+        min-height: 3rem;
+        padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+        position: relative;
+        text-decoration: none;
+        vertical-align: baseline;
+        width: auto;
+      }
+    }
+  }
+  .characters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(285px, 2fr));
+    gap: 1em;
+    justify-content: center;
+  }
+  .portrait {
+    border: 1px solid black;
+    cursor: pointer;
+    height: 105px;
+    width: 285px;
     margin-top: 4em;
   }
 }

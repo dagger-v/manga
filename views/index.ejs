@@ -23,8 +23,10 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <div class="content">
-      <% for (let i = 0; i < 12; i++) { %>
-      <div class="box"></div>
+      <% for (let i = 1; i < 13; i++) { %>
+      <div id="manga" class="box">
+        <img src="/images/manga-<%= i %>.png" alt="manga" />
+      </div>
       <% } %>
     </div>
 
@@ -33,5 +35,7 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+
+    <script src="/javascripts/app.js"></script>
   </body>
 </html>
