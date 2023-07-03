@@ -99,10 +99,10 @@ p {
     display: grid;
     h4 {
       grid-column: 1 / span 1;
-      margin-left: 50px;
+      margin-left: 35px;
     }
     .characters {
-      margin-left: 50px;
+      margin-left: 35px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(285px, 2fr));
       grid-column: 1 / span 3;
@@ -125,12 +125,18 @@ p {
     }
   }
   .info-m1 {
-    border: 1px solid black;
     float: left;
-    width: 15%;
-    margin-top: 3em;
+    margin-left: 10px;
+    width: 16%;
+    margin-top: 4.4em;
     .information {
-      color: red;
+      font-size: 16px;
+      .key {
+        color: #2d4356;
+      }
+      .value {
+        color: #9299a9;
+      }
     }
   }
 }

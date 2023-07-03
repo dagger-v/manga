@@ -99,10 +99,10 @@ p {
 }
 .manga .data-m1 h4 {
   grid-column: 1/span 1;
-  margin-left: 50px;
+  margin-left: 35px;
 }
 .manga .data-m1 .characters {
-  margin-left: 50px;
+  margin-left: 35px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(285px, 2fr));
   grid-column: 1/span 3;
@@ -124,13 +124,19 @@ p {
   padding-top: 5px;
 }
 .manga .info-m1 {
-  border: 1px solid black;
   float: left;
-  width: 15%;
-  margin-top: 3em;
+  margin-left: 10px;
+  width: 16%;
+  margin-top: 4.4em;
 }
 .manga .info-m1 .information {
-  color: red;
+  font-size: 16px;
+}
+.manga .info-m1 .information .key {
+  color: #2d4356;
+}
+.manga .info-m1 .information .value {
+  color: #9299a9;
 }
 
 /*# sourceMappingURL=style.css.map */
