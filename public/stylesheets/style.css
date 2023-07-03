@@ -22,20 +22,25 @@ p {
 }
 .content .box button {
   position: absolute;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 70%;
-  border: none;
-  bottom: 10px;
-  color: #fff;
-  font-weight: 500;
-  height: 30px;
-  line-height: 1.2;
-  margin: 0;
+  bottom: 0;
+  color: #2c528e;
+  border: 2px solid #2c528e;
   opacity: 0;
-  right: 10px;
+  right: 0;
   transition: opacity 0.3s ease;
-  width: 30px;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  margin: 0;
+  text-decoration: none;
+  vertical-align: baseline;
+  height: 15%;
+  width: 100%;
 }
 .content .box:hover button {
   opacity: 1;
@@ -90,10 +95,17 @@ p {
 }
 .manga .data-m1 {
   margin-top: 2em;
+  display: grid;
+}
+.manga .data-m1 h4 {
+  grid-column: 1/span 1;
+  margin-left: 50px;
 }
 .manga .data-m1 .characters {
+  margin-left: 50px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(285px, 2fr));
+  grid-column: 1/span 3;
   gap: 1em;
   justify-content: center;
 }
@@ -110,6 +122,15 @@ p {
 .manga .data-m1 .portrait p {
   padding-left: 10px;
   padding-top: 5px;
+}
+.manga .info-m1 {
+  border: 1px solid black;
+  float: left;
+  width: 15%;
+  margin-top: 3em;
+}
+.manga .info-m1 .information {
+  color: red;
 }
 
 /*# sourceMappingURL=style.css.map */
