@@ -2,25 +2,30 @@ p {
   font-family: "Poppins", sans-serif;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(185px, 2fr));
-  gap: 1em;
+.main {
   max-width: 1220px;
   margin: 0 auto;
 }
-.content .box {
+.main .popular,
+.main .new {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+}
+.main .popular .box,
+.main .new .box {
   position: relative;
   cursor: pointer;
   height: 265px;
   width: 185px;
-  margin-top: 4em;
 }
-.content .box img {
+.main .popular .box img,
+.main .new .box img {
   max-width: 100%;
   max-height: 100%;
 }
-.content .box button {
+.main .popular .box button,
+.main .new .box button {
   position: absolute;
   bottom: 0;
   color: #2c528e;
@@ -42,8 +47,19 @@ p {
   height: 15%;
   width: 100%;
 }
-.content .box:hover button {
+.main .popular .box:hover button,
+.main .new .box:hover button {
   opacity: 1;
+}
+.main .view {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4em;
+  transition: color 0.2s ease;
+}
+.main .view a {
+  text-decoration: none;
+  margin-left: auto;
 }
 
 .manga {
@@ -110,7 +126,7 @@ p {
   justify-content: center;
 }
 .manga .data-m1 .portrait {
-  border: 1px solid #000;
+  border: 1px solid #fafafa;
   display: flex;
   cursor: pointer;
   height: 80px;
