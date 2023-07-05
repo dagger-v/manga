@@ -10,14 +10,14 @@ p {
 .main .new {
   display: grid;
   gap: 1em;
-  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  grid-template-columns: repeat(auto-fit, 185px);
+  justify-content: space-between;
 }
 .main .popular .box,
 .main .new .box {
   position: relative;
   cursor: pointer;
   height: 265px;
-  width: 185px;
 }
 .main .popular .box img,
 .main .new .box img {
