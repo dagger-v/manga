@@ -5,8 +5,7 @@ p {
 .main {
   max-width: 1220px;
   margin: 0 auto;
-  .popular,
-  .new {
+  .order {
     display: grid;
     gap: 1em;
     grid-template-columns: repeat(auto-fit, 185px);
@@ -151,4 +150,11 @@ p {
       }
     }
   }
+}
+
+.footer {
+  background-color: #212529;
+  height: 286px;
+  margin-top: 10em;
+  width: auto;
 }

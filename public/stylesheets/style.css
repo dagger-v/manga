@@ -6,26 +6,22 @@ p {
   max-width: 1220px;
   margin: 0 auto;
 }
-.main .popular,
-.main .new {
+.main .order {
   display: grid;
   gap: 1em;
   grid-template-columns: repeat(auto-fit, 185px);
   justify-content: space-between;
 }
-.main .popular .box,
-.main .new .box {
+.main .order .box {
   position: relative;
   cursor: pointer;
   height: 265px;
 }
-.main .popular .box img,
-.main .new .box img {
+.main .order .box img {
   max-width: 100%;
   max-height: 100%;
 }
-.main .popular .box button,
-.main .new .box button {
+.main .order .box button {
   position: absolute;
   bottom: 0;
   color: #2c528e;
@@ -47,8 +43,7 @@ p {
   height: 15%;
   width: 100%;
 }
-.main .popular .box:hover button,
-.main .new .box:hover button {
+.main .order .box:hover button {
   opacity: 1;
 }
 .main .view {
@@ -153,6 +148,13 @@ p {
 }
 .manga .info-m1 .information .value {
   color: #9299a9;
+}
+
+.footer {
+  background-color: #212529;
+  height: 286px;
+  margin-top: 10em;
+  width: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
