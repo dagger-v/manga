@@ -18,4 +18,8 @@ router.get("/search/trending", function (req, res, next) {
   res.render("trending", { title: "Trending" });
 });
 
+router.get("/search/staff", function (req, res, next) {
+  res.render("trending", { title: "Staff Favorites" });
+});
+
 module.exports = router;
