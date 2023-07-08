@@ -158,12 +158,18 @@ p {
 }
 
 .container-fluid {
-  max-width: 1220px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
 }
 .container-fluid .container-n1 {
   justify-content: space-between;
+}
+
+.login {
+  max-width: 1220px;
+  margin: 0 auto;
+  height: 100vh;
 }
 
 /*# sourceMappingURL=style.css.map */

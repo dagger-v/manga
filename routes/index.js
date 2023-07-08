@@ -6,6 +6,10 @@ router.get("/", function (req, res, next) {
   res.render("index", { title: "Taka" });
 });
 
+router.get("/login", function (req, res, next) {
+  res.render("login", { title: "Taka" });
+});
+
 router.get("/manga/:title", function (req, res, next) {
   res.render("manga", { title: "Taka" });
 });

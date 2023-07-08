@@ -160,10 +160,22 @@ p {
 }
 
 .container-fluid {
-  max-width: 1220px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   .container-n1 {
     justify-content: space-between;
   }
 }
+
+.login {
+  max-width: 1220px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+// <% if (!isAuthenticated) { %>
+//   <li class="nav-item">
+//     <a class="nav-link" href="#">Profile</a>
+//   </li>
+//   <% } %>
