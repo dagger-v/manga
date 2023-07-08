@@ -157,4 +157,13 @@ p {
   width: auto;
 }
 
+.container-fluid {
+  max-width: 1220px;
+  margin: 0 auto;
+  display: flex;
+}
+.container-fluid .container-n1 {
+  justify-content: space-between;
+}
+
 /*# sourceMappingURL=style.css.map */
