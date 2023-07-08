@@ -169,9 +169,15 @@ p {
 }
 
 .login {
+  display: flex;
+  justify-content: center;
   max-width: 1220px;
   margin: 0 auto;
-  height: 100vh;
+  margin-top: 4em;
+  form {
+    display: inline;
+    padding: 5em;
+  }
 }
 
 // <% if (!isAuthenticated) { %>
