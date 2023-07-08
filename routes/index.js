@@ -19,7 +19,7 @@ router.get("/search/trending", function (req, res, next) {
 });
 
 router.get("/search/staff", function (req, res, next) {
-  res.render("trending", { title: "Staff Favorites" });
+  res.render("staff", { title: "Staff Favorites" });
 });
 
 module.exports = router;
