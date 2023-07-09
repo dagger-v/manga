@@ -21,24 +21,26 @@
   <body>
     <%- include("navbar"); -%>
     <div class="login">
-      <form>
+      <form action="/auth/login" method="post">
         <h1>Login</h1>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Username</label>
+          <label for="username" class="form-label">Username</label>
           <input
             type="text"
             class="form-control"
-            id="exampleInputUsername1"
+            id="username"
+            name="username"
             aria-describedby="usernameHelp"
             placeholder="Username"
           />
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <label for="password" class="form-label">Password</label>
           <input
             type="password"
             class="form-control"
-            id="exampleInputPassword1"
+            id="password"
+            name="password"
             placeholder="Password"
           />
         </div>
