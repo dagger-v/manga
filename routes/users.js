@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
 
+const Collection = require("../models/Collection");
+
 /* GET users listing. */
 router.get("/profile", function (req, res, next) {
   const user = req.user.username;

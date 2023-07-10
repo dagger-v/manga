@@ -180,8 +180,8 @@ p {
   }
 }
 
-// <% if (!isAuthenticated) { %>
-//   <li class="nav-item">
-//     <a class="nav-link" href="#">Profile</a>
-//   </li>
-//   <% } %>
+.collection {
+  border: 1px solid black;
+  height: 200px;
+  width: 200px;
+}
