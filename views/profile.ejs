@@ -26,15 +26,15 @@
         <div class="manga">
           <a>Overview</a>
           <a>Currently Reading</a>
-          <a>Going To Read</a>
+          <a>Finished Reading</a>
+          <a>Plan To Read</a>
           <a>Favorites</a>
         </div>
       </div>
-
       <div class="content">
         <% collection_list.forEach(function(collection) { %>
         <div class="box">
-          <p><%= collection.title %></p>
+          <img src="/images/manga-1.png" alt="manga" />
         </div>
         <% }); %>
       </div>

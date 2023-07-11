@@ -186,13 +186,17 @@ p {
   .content {
     display: grid;
     gap: 1em;
-    grid-template-columns: repeat(auto-fit, 185px);
+    grid-template-columns: repeat(auto-fit, 85px);
     margin-top: 5em;
     .box {
       border: 1px solid;
       position: relative;
       cursor: pointer;
-      height: 265px;
+      height: 115px;
+      img {
+        max-height: 100%;
+        min-width: 100%;
+      }
     }
   }
   .bar {
@@ -201,8 +205,8 @@ p {
     .manga {
       a {
         cursor: pointer;
-        margin: 0 50px;
         transition: 0.15s;
+        margin: 0 2em;
       }
       a:hover {
         color: #4abd4e;
