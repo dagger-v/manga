@@ -13,8 +13,7 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/manga/:title", function (req, res, next) {
-  const user = req.user.username;
-  res.render("manga", user);
+  res.render("manga");
 });
 
 router.post("/manga/:title", [

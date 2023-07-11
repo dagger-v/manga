@@ -181,7 +181,32 @@ p {
 }
 
 .collection {
-  border: 1px solid black;
-  height: 200px;
-  width: 200px;
+  max-width: 1220px;
+  margin: 0 auto;
+  .content {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, 185px);
+    margin-top: 5em;
+    .box {
+      border: 1px solid;
+      position: relative;
+      cursor: pointer;
+      height: 265px;
+    }
+  }
+  .bar {
+    display: flex;
+    flex-direction: column;
+    .manga {
+      a {
+        cursor: pointer;
+        margin: 0 50px;
+        transition: 0.15s;
+      }
+      a:hover {
+        color: #4abd4e;
+      }
+    }
+  }
 }
