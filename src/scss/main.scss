@@ -183,8 +183,12 @@ p {
 .collection {
   max-width: 1220px;
   margin: 0 auto;
+  .manga-p1 {
+    display: flex;
+    gap: 50px;
+  }
   .manga-p2 {
-    width: 35%;
+    width: 40%;
   }
   .view {
     display: flex;
