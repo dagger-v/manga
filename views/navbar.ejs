@@ -42,11 +42,12 @@
     <div class="container-n1">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <form class="form-inline my-2 my-lg-0">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            S
+          <button class="btn" type="submit">
+            <img src="/images/icons/search_icon.png" alt="search icon" />
           </button>
         </form>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <% if (isAuthenticated) { %>
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -55,7 +56,7 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              P
+              <%= user.username %>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Action</a></li>
@@ -64,6 +65,7 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
+          <% } %>
         </ul>
       </div>
     </div>
