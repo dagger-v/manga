@@ -19,7 +19,7 @@
     />
   </head>
   <body>
-    <%- include("navbar"); -%> <%= user %>
+    <%- include("navbar"); -%>
 
     <div class="collection">
       <div class="bar">
@@ -31,12 +31,23 @@
           <a href="/users/profile/favorites">Favorites</a>
         </div>
       </div>
-      <div class="content">
-        <% collection_list.forEach(function(collection) { %>
-        <div class="box">
-          <img src="/images/manga-1.png" alt="manga" />
+      <div class="manga-p1">
+        <div class="manga-p2">
+          <div class="view">
+            <p>Manga</p>
+            <a href="/search/trending">View All</a>
+          </div>
+          <div class="content">
+            <% collection_list.forEach(function(collection) { %>
+            <div class="box">
+              <img src="/images/manga-1.png" alt="manga" />
+            </div>
+            <% }); %>
+          </div>
         </div>
-        <% }); %>
+        <div class="manga-p3">
+          <p>test</p>
+        </div>
       </div>
     </div>
 

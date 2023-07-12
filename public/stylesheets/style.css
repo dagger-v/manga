@@ -182,14 +182,22 @@ p {
   max-width: 1220px;
   margin: 0 auto;
 }
+.collection .manga-p2 {
+  width: 35%;
+}
+.collection .view {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4em;
+  transition: color 0.2s ease;
+}
 .collection .content {
   display: grid;
   gap: 1em;
   grid-template-columns: repeat(auto-fit, 85px);
-  margin-top: 5em;
+  justify-content: space-between;
 }
 .collection .content .box {
-  border: 1px solid;
   position: relative;
   cursor: pointer;
   height: 115px;
