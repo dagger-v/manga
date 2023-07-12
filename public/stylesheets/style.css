@@ -202,12 +202,19 @@ p {
   display: flex;
   flex-direction: column;
 }
-.collection .bar .manga a {
+.collection .bar .tabbed {
+  max-width: 1220px;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+.collection .bar .tabbed a {
+  color: #50535a;
   cursor: pointer;
+  text-decoration: none;
   transition: 0.15s;
   margin: 0 2em;
 }
-.collection .bar .manga a:hover {
+.collection .bar .tabbed a:hover {
   color: #4abd4e;
 }
 

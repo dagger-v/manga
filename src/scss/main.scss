@@ -202,9 +202,14 @@ p {
   .bar {
     display: flex;
     flex-direction: column;
-    .manga {
+    .tabbed {
+      max-width: 1220px;
+      margin: 0 auto;
+      margin-top: 2em;
       a {
+        color: #50535a;
         cursor: pointer;
+        text-decoration: none;
         transition: 0.15s;
         margin: 0 2em;
       }

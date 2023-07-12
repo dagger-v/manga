@@ -19,4 +19,32 @@ router.get("/profile", function (req, res, next) {
     });
 });
 
+router.get("/profile/current", function (req, res, next) {
+  const user = req.user.username;
+  res.render("current", {
+    user,
+  });
+});
+
+router.get("/profile/finished", function (req, res, next) {
+  const user = req.user.username;
+  res.render("finished", {
+    user,
+  });
+});
+
+router.get("/profile/plan", function (req, res, next) {
+  const user = req.user.username;
+  res.render("plan", {
+    user,
+  });
+});
+
+router.get("/profile/favorites", function (req, res, next) {
+  const user = req.user.username;
+  res.render("favorites", {
+    user,
+  });
+});
+
 module.exports = router;
