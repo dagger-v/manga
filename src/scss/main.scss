@@ -2,6 +2,11 @@ p {
   font-family: "Poppins", sans-serif;
 }
 
+textarea {
+  color: #9299a9 !important;
+  resize: none !important;
+}
+
 .main {
   max-width: 1220px;
   margin: 0 auto;
@@ -186,6 +191,9 @@ p {
   .manga-p1 {
     display: flex;
     gap: 50px;
+    .title {
+      color: violet;
+    }
   }
   .manga-p2 {
     width: 40%;
@@ -195,6 +203,14 @@ p {
     justify-content: space-between;
     margin-top: 4em;
     transition: color 0.2s ease;
+  }
+  .summary {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4em;
+    p {
+      font-size: 15px;
+    }
   }
   .content {
     display: grid;
