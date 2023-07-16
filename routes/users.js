@@ -5,27 +5,28 @@ const Collection = require("../models/Collection");
 const Status = require("../models/Status");
 
 const { body, validationResult } = require("express-validator");
+const asyncHandler = require("express-async-handler");
 
 const async = require("async");
 const he = require("he");
 
 /* GET users listing. */
-router.get("/profile", function (req, res, next) {
-  const user = req.user.username;
-  Collection.find({}, "title author createdAt").sort({ createdAt: -1 });
-  Status.find({}, "content author createdAt")
-    .sort({ createdAt: -1 })
-    .exec(function (err, list_collections, list_status) {
-      if (err) {
-        return next(err);
-      }
-      res.render("profile", {
-        collection_list: list_collections,
-        status_list: list_status,
-        user,
-      });
+router.get(
+  "/profile",
+  asyncHandler(async (req, res, next) => {
+    const user = req.user.username;
+
+    const [list_collections, list_status] = await Promise.all([
+      Collection.find().exec(),
+      Status.find().exec(),
+    ]);
+    res.render("profile", {
+      collection_list: list_collections,
+      status_list: list_status,
+      user,
     });
-});
+  })
+);
 
 router.post("/profile", [
   // Validate and sanitize fields.
