@@ -11,6 +11,12 @@ const collectionSchema = new mongoose.Schema({
     ref: "User", // Reference to the user who made the Collection update
     required: true,
   },
+  status: {
+    type: String,
+    enum: ["plan", "current", "finish"],
+    default: "plan",
+  },
+  favorite: { type: Boolean, default: false },
   createdAt: {
     type: Date,
     default: Date.now,

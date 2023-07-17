@@ -77,24 +77,39 @@ router.post("/profile", [
   },
 ]);
 
-router.get("/profile/current", function (req, res, next) {
+router.get("/profile/current", async function (req, res, next) {
   const user = req.user.username;
+  const current = await Collection.find({
+    status: "current",
+  }).exec();
+
   res.render("current", {
     user,
+    current,
   });
 });
 
-router.get("/profile/finished", function (req, res, next) {
+router.get("/profile/finished", async function (req, res, next) {
   const user = req.user.username;
+  const finish = await Collection.find({
+    status: "finish",
+  }).exec();
+
   res.render("finished", {
     user,
+    finish,
   });
 });
 
-router.get("/profile/plan", function (req, res, next) {
+router.get("/profile/plan", async function (req, res, next) {
   const user = req.user.username;
+  const plan = await Collection.find({
+    status: "plan",
+  }).exec();
+
   res.render("plan", {
     user,
+    plan,
   });
 });
 

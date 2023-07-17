@@ -247,3 +247,23 @@ textarea {
     }
   }
 }
+
+.overview {
+  max-width: 1220px;
+  margin: 0 auto;
+  margin-top: 5em;
+  .order {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(auto-fit, 145px);
+    .box {
+      position: relative;
+      cursor: pointer;
+      height: 225px;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+}

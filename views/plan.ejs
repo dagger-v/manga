@@ -19,7 +19,7 @@
     />
   </head>
   <body>
-    <%- include("navbar"); -%> <%= user %>
+    <%- include("navbar"); -%>
 
     <div class="collection">
       <div class="bar">
@@ -31,7 +31,16 @@
           <a href="/users/profile/favorites">Favorites</a>
         </div>
       </div>
-      <div class="content"></div>
+
+      <div class="overview">
+        <div class="order">
+          <% plan.forEach(function(collection) { %>
+          <div id="manga" class="box">
+            <img src="/images/manga-1.png" alt="manga" />
+          </div>
+          <% }); %>
+        </div>
+      </div>
     </div>
 
     <script
