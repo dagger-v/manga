@@ -36,29 +36,34 @@
                 hidden
               />
             </div>
-            <button type="submit">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">Set as Reading</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Set as Planning</a>
-                    </li>
-                    <li><a class="dropdown-item" href="#">Set as Read</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </button>
+            <div class="add">
+              <button type="submit">Add to Library</button>
+              <span class="span-a">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#">Set as Reading</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Set as Planning</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Set as Finished</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </span>
+            </div>
           </form>
           <% } %>
         </div>

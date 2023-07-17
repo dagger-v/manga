@@ -86,28 +86,48 @@ textarea {
   display: flex;
   flex-direction: column;
 }
-.manga .cover .banner button {
+.manga .cover .banner .add {
   align-items: center;
-  background-clip: padding-box;
-  background-color: rgb(60, 178, 218);
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #fff;
+  border-radius: 3px;
   cursor: pointer;
+  display: flex;
+  font-size: 1.4rem;
+  height: 35px;
+  justify-content: center;
+  line-height: 1.3rem;
+}
+.manga .cover .banner button {
+  background-color: #4e90f1;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  cursor: pointer;
+  align-items: center;
+  border: 1px solid transparent;
+  position: relative;
   display: inline-flex;
+  border-radius: 0.25rem;
+  vertical-align: baseline;
+  background-clip: padding-box;
+  box-sizing: border-box;
   font-size: 16px;
   font-weight: 600;
   justify-content: center;
   line-height: 1.25;
-  margin: 0 10px;
-  min-height: 3rem;
-  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
   text-decoration: none;
-  vertical-align: baseline;
-  width: auto;
+}
+.manga .cover .banner ul {
+  align-items: center;
+  line-height: 1.25;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  background-color: #b1cdf7;
+  padding-right: 6px;
+}
+.manga .cover .banner ul ul {
+  background-color: #fff;
+  border: 0;
+  box-shadow: 0 1px 10px 0 rgba(49, 54, 68, 0.15);
 }
 .manga .data-m1 {
   margin-top: 2em;
@@ -191,11 +211,11 @@ textarea {
   display: flex;
   gap: 50px;
 }
+.collection .manga-p1 .manga-p2 {
+  width: 45%;
+}
 .collection .manga-p1 .title {
   color: #ff2171;
-}
-.collection .manga-p2 {
-  width: 40%;
 }
 .collection .view {
   display: flex;
