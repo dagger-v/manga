@@ -33,6 +33,34 @@
             <div class="color-b2 black"></div>
           </div>
         </div>
+        <div class="about">
+          <p>About</p>
+          <form action="" method="POST">
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                id="content"
+                name="content"
+                rows="1"
+                cols="65"
+                placeholder="Update About Me"
+              ></textarea>
+            </div>
+            <div>
+              <label for="author"></label>
+              <input
+                id="author"
+                type="text"
+                name="author"
+                value="<%= user %>"
+                hidden
+              />
+            </div>
+            <div>
+              <button type="submit" class="post-btn">Post</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     <script
