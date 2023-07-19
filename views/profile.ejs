@@ -31,6 +31,46 @@
           <a href="/users/profile/favorites">Favorites</a>
         </div>
       </div>
+      <div class="manga-d1">
+        <div class="view">
+          <p>Activity</p>
+          <a href="/search/trending">View All</a>
+        </div>
+        <div class="content-p3">
+          <form action="" method="POST">
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                id="content"
+                name="content"
+                rows="1"
+                cols="65"
+                placeholder="Write a Status"
+              ></textarea>
+            </div>
+            <div>
+              <label for="author"></label>
+              <input
+                id="author"
+                type="text"
+                name="author"
+                value="<%= user %>"
+                hidden
+              />
+            </div>
+            <div>
+              <button type="submit" class="post-btn">Post</button>
+            </div>
+          </form>
+        </div>
+        <div class="status">
+          <% status_list.forEach(function(status) { %>
+          <div class="status-c">
+            <p><%= status.content %></p>
+          </div>
+          <% }); %>
+        </div>
+      </div>
       <div class="manga-p1">
         <div class="manga-p2">
           <div class="summary">
@@ -45,48 +85,6 @@
           </div>
         </div>
         <div class="manga-p3">
-          <div class="view">
-            <p>Activity</p>
-            <a href="/search/trending">View All</a>
-          </div>
-          <div class="content-p3">
-            <form action="" method="POST">
-              <div class="form-group">
-                <textarea
-                  class="form-control"
-                  id="content"
-                  name="content"
-                  rows="1"
-                  cols="65"
-                  placeholder="Write a Status"
-                ></textarea>
-              </div>
-              <div>
-                <label for="author"></label>
-                <input
-                  id="author"
-                  type="text"
-                  name="author"
-                  value="<%= user %>"
-                  hidden
-                />
-              </div>
-              <div>
-                <button type="submit" class="post-btn">Post</button>
-              </div>
-            </form>
-          </div>
-          <div class="status">
-            <% status_list.forEach(function(status) { %>
-            <div class="status-c">
-              <p><%= status.content %></p>
-            </div>
-            <% }); %>
-          </div>
-        </div>
-      </div>
-      <div class="manga-p1">
-        <div class="manga-p2">
           <div class="view">
             <p>Manga</p>
             <a href="/search/trending">View All</a>

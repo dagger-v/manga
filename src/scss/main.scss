@@ -128,6 +128,20 @@ textarea {
           box-shadow: 0 1px 10px 0 rgba(49, 54, 68, 0.15);
         }
       }
+      .favorite {
+        align-items: center;
+        background: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        height: 35px;
+        justify-content: center;
+        padding-left: 1px;
+        transition: 0.2s;
+        padding: 0 4px;
+        line-height: 1.25;
+        margin-left: 10px;
+      }
     }
   }
   .data-m1 {
@@ -206,14 +220,14 @@ textarea {
 }
 
 .collection {
-  max-width: 1220px;
+  max-width: 1420px;
   margin: 0 auto;
   .manga-p1 {
     display: flex;
-    gap: 50px;
-    justify-content: space-between;
-    .manga-p2 {
-      width: 45%;
+    flex-direction: column;
+    width: 50%;
+    .manga-p3 {
+      width: 80%;
     }
     .title {
       color: #ff2171;
@@ -267,6 +281,9 @@ textarea {
       }
     }
   }
+  .manga-d1 {
+    float: right;
+  }
 }
 
 .overview {
@@ -287,4 +304,8 @@ textarea {
       }
     }
   }
+}
+
+.red {
+  color: red !important;
 }

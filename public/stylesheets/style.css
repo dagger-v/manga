@@ -129,6 +129,20 @@ textarea {
   border: 0;
   box-shadow: 0 1px 10px 0 rgba(49, 54, 68, 0.15);
 }
+.manga .cover .banner .favorite {
+  align-items: center;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  height: 35px;
+  justify-content: center;
+  padding-left: 1px;
+  transition: 0.2s;
+  padding: 0 4px;
+  line-height: 1.25;
+  margin-left: 10px;
+}
 .manga .data-m1 {
   margin-top: 2em;
   display: grid;
@@ -204,16 +218,16 @@ textarea {
 }
 
 .collection {
-  max-width: 1220px;
+  max-width: 1420px;
   margin: 0 auto;
 }
 .collection .manga-p1 {
   display: flex;
-  gap: 50px;
-  justify-content: space-between;
+  flex-direction: column;
+  width: 50%;
 }
-.collection .manga-p1 .manga-p2 {
-  width: 45%;
+.collection .manga-p1 .manga-p3 {
+  width: 80%;
 }
 .collection .manga-p1 .title {
   color: #ff2171;
@@ -266,6 +280,9 @@ textarea {
 .collection .bar .tabbed a:hover {
   color: #4abd4e;
 }
+.collection .manga-d1 {
+  float: right;
+}
 
 .overview {
   max-width: 1220px;
@@ -285,6 +302,10 @@ textarea {
 .overview .order .box img {
   max-width: 100%;
   max-height: 100%;
+}
+
+.red {
+  color: red !important;
 }
 
 /*# sourceMappingURL=style.css.map */

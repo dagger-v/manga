@@ -113,10 +113,15 @@ router.get("/profile/plan", async function (req, res, next) {
   });
 });
 
-router.get("/profile/favorites", function (req, res, next) {
+router.get("/profile/favorites", async function (req, res, next) {
   const user = req.user.username;
+  const favorite = await Collection.find({
+    favorite: true,
+  }).exec();
+
   res.render("favorites", {
     user,
+    favorite,
   });
 });
 
