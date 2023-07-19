@@ -1,10 +1,20 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Get the div element by its ID
-  let divElement = document.getElementById("manga");
+const Collection = require("../models/Collection");
 
-  // Add a click event listener to the div
-  divElement.addEventListener("click", function () {
-    // Redirect to the desired page
-    window.location.href = "/manga/title";
-  });
+const reading = document.getElementById("reading");
+const plan = document.getElementById("plan");
+const finished = document.getElementById("finished");
+
+reading.addEventListener("click", async function () {
+  const request = await Collection.findById(req.params.id);
+  request.status = "reading";
+});
+
+plan.addEventListener("click", async function () {
+  const request = await Collection.findById(req.params.id);
+  request.status = "plan";
+});
+
+finished.addEventListener("click", async function () {
+  const request = await Collection.findById(req.params.id);
+  request.status = "finished";
 });

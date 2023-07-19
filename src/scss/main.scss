@@ -211,6 +211,7 @@ textarea {
   .manga-p1 {
     display: flex;
     gap: 50px;
+    justify-content: space-between;
     .manga-p2 {
       width: 45%;
     }
