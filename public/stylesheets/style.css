@@ -7,6 +7,10 @@ textarea {
   resize: none !important;
 }
 
+.logout-c {
+  color: red !important;
+}
+
 .main {
   max-width: 1220px;
   margin: 0 auto;
@@ -304,8 +308,41 @@ textarea {
   max-height: 100%;
 }
 
-.red {
-  color: red !important;
+.settings {
+  max-width: 1220px;
+  margin: 0 auto;
+  margin-top: 5em;
+}
+.settings .profile {
+  border: 1px solid black;
+}
+.settings .profile .color .color-b1 {
+  display: flex;
+  gap: 20px;
+}
+.settings .profile .color .color-b1 div {
+  border: 1px solid black;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+.settings .profile .color .color-b1 .blue {
+  background-color: #4e90f1;
+}
+.settings .profile .color .color-b1 .green {
+  background-color: green;
+}
+.settings .profile .color .color-b1 .violet {
+  background-color: #ff2171;
+}
+.settings .profile .color .color-b1 .purple {
+  background-color: purple;
+}
+.settings .profile .color .color-b1 .red {
+  background-color: red;
+}
+.settings .profile .color .color-b1 .black {
+  background-color: #212529;
 }
 
 /*# sourceMappingURL=style.css.map */

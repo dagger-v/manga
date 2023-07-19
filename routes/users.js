@@ -125,4 +125,10 @@ router.get("/profile/favorites", async function (req, res, next) {
   });
 });
 
+router.get("/settings", function (req, res, next) {
+  const user = req.user.username;
+
+  res.render("settings", { user });
+});
+
 module.exports = router;

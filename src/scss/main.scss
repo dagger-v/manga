@@ -7,6 +7,10 @@ textarea {
   resize: none !important;
 }
 
+.logout-c {
+  color: red !important;
+}
+
 .main {
   max-width: 1220px;
   margin: 0 auto;
@@ -306,6 +310,41 @@ textarea {
   }
 }
 
-.red {
-  color: red !important;
+.settings {
+  max-width: 1220px;
+  margin: 0 auto;
+  margin-top: 5em;
+  .profile {
+    border: 1px solid black;
+    .color {
+      .color-b1 {
+        display: flex;
+        gap: 20px;
+        div {
+          border: 1px solid black;
+          cursor: pointer;
+          height: 50px;
+          width: 50px;
+        }
+        .blue {
+          background-color: #4e90f1;
+        }
+        .green {
+          background-color: green;
+        }
+        .violet {
+          background-color: #ff2171;
+        }
+        .purple {
+          background-color: purple;
+        }
+        .red {
+          background-color: red;
+        }
+        .black {
+          background-color: #212529;
+        }
+      }
+    }
+  }
 }
