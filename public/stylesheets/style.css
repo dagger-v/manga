@@ -288,6 +288,35 @@ textarea {
   float: right;
 }
 
+.status .status-c {
+  border: 2px solid #fbfbfb;
+  background-color: #fff;
+  padding: 5px;
+  margin-top: 10px;
+  display: flex;
+}
+.status .status-c .img-c img {
+  border: 1px solid #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 12px;
+  object-fit: contain;
+}
+.status .status-c .container-c {
+  margin-top: 12px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+.status .status-c .container-c .name-c {
+  font: 15px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+.status .status-c .container-c .name-c span {
+  color: #69676d;
+}
+
 .overview {
   max-width: 1220px;
   margin: 0 auto;
@@ -351,20 +380,17 @@ textarea {
 }
 
 .banner {
-  background-color: #50535a;
-  display: flex;
-  align-items: flex-end;
-  height: 250px;
-  width: 100%;
+  position: relative;
 }
-.banner .banner-c {
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 60%;
-}
-.banner .banner-c p {
+.banner p {
   color: #fff;
+  position: absolute;
+  bottom: 8px;
+  left: 120px;
   font-size: 24px;
+}
+.banner img {
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

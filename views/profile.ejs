@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap"
       rel="stylesheet"
     />
 
@@ -22,9 +22,8 @@
     <%- include("navbar"); -%>
 
     <div class="banner">
-      <div class="banner-c">
-        <p>Dagger</p>
-      </div>
+      <img src="/images/uploads/dagger-b.png" alt="banner" />
+      <p>Dagger</p>
     </div>
 
     <div class="collection">
@@ -64,14 +63,26 @@
               />
             </div>
             <div>
-              <button type="submit" class="post-btn">Post</button>
+              <button type="submit" class="btn btn-success">Post</button>
             </div>
           </form>
         </div>
         <div class="status">
-          <% status_list.forEach(function(status) { %>
+          <% status_list.forEach(function(status) { %> <% const options = {
+          month: 'short', day: 'numeric' }; %>
           <div class="status-c">
-            <p><%= status.content %></p>
+            <div class="img-c">
+              <img class="avatar" src="/images/uploads/dagger.png" alt="logo" />
+            </div>
+            <div class="container-c">
+              <p class="name-c">
+                <%= status.author %> ·
+                <span>
+                  <%= status.createdAt.toLocaleDateString("en-US", options) %>
+                </span>
+              </p>
+              <p><%= status.content %></p>
+            </div>
           </div>
           <% }); %>
         </div>
