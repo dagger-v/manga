@@ -13,8 +13,8 @@ passport.serializeUser(function (user, cb) {
   process.nextTick(function () {
     cb(null, {
       id: user.id,
-      firstname: user.firstname,
       username: user.username,
+      createdAt: user.createdAt,
     });
   });
 });
@@ -71,9 +71,7 @@ router.post("/register", async (req, res) => {
 router.post("/login", (req, res) => {
   // Create new user object
   const user = new User({
-    firstname: req.body.firstname,
     username: req.body.username,
-    email: req.body.email,
     password: req.body.password,
   });
 

@@ -22,6 +22,16 @@
     <%- include("navbar"); -%>
     <div class="settings">
       <div class="profile">
+        <div class="name">
+          <h5>Username:</h5>
+          <p><%= user %></p>
+        </div>
+        <div class="member">
+          <% const options = { month: 'short', day: 'numeric', year: "numeric" }
+          %> <% const member = new Date(created) %>
+          <h5>Member Since:</h5>
+          <p><%= member.toLocaleDateString("en-US", options) %></p>
+        </div>
         <div class="color">
           <p>Profile Color</p>
           <div class="color-b1">
@@ -41,7 +51,7 @@
                 class="form-control"
                 id="content"
                 name="content"
-                rows="1"
+                rows="10"
                 cols="65"
                 placeholder="Update About Me"
               ></textarea>

@@ -249,6 +249,7 @@ textarea {
 }
 .collection .summary p {
   font-size: 15px;
+  white-space: pre-wrap;
 }
 .collection .content {
   display: grid;

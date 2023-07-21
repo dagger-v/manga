@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
+const About = require("../models/About");
 const Collection = require("../models/Collection");
 const Status = require("../models/Status");
 
@@ -16,11 +17,13 @@ router.get(
   asyncHandler(async (req, res, next) => {
     const user = req.user.username;
 
-    const [list_collections, list_status] = await Promise.all([
+    const [list_about, list_collections, list_status] = await Promise.all([
+      About.find().sort({ createdAt: -1 }).limit(1).exec(),
       Collection.find().exec(),
-      Status.find().exec(),
+      Status.find().sort({ createdAt: -1 }).limit(5).exec(),
     ]);
     res.render("profile", {
+      about_list: list_about,
       collection_list: list_collections,
       status_list: list_status,
       user,
@@ -127,8 +130,59 @@ router.get("/profile/favorites", async function (req, res, next) {
 
 router.get("/settings", function (req, res, next) {
   const user = req.user.username;
+  const created = req.user.createdAt;
+  console.log(created);
 
-  res.render("settings", { user });
+  res.render("settings", { user, created });
 });
+
+router.post("/settings", [
+  // Validate and sanitize fields.
+  body("content", "Content must not be empty.")
+    .trim()
+    .isLength({ min: 1 })
+    .escape(),
+  // Process request after validation and sanitization.
+  (req, res, next) => {
+    // Extract the validation errors from a request.
+    const errors = validationResult(req);
+
+    // Access the text content from the form
+    const text = req.body.content;
+
+    // Decode the text content using he library
+    const decodedText = he.decode(text);
+
+    // Create an article object with escaped and trimmed data.
+    const about = new About({
+      content: decodedText,
+      author: req.body.author,
+    });
+
+    if (!errors.isEmpty()) {
+      // Get all authors and genres for form.
+      async.parallel((err, results) => {
+        if (err) {
+          return next(err);
+        }
+        res.render("settings", {
+          author: author.username,
+          content: content,
+          about,
+          errors: errors.array(),
+        });
+      });
+      return;
+    }
+
+    // Data from form is valid. Save statue update.
+    about.save((err) => {
+      if (err) {
+        return next(err);
+      }
+      res.redirect("/users/settings");
+    });
+  },
+]);
 
 module.exports = router;
