@@ -2,6 +2,10 @@ p {
   font-family: "Poppins", sans-serif;
 }
 
+#message {
+  display: none;
+}
+
 textarea {
   color: #9299a9 !important;
   resize: none !important;
@@ -98,6 +102,7 @@ textarea {
         height: 35px;
         justify-content: center;
         line-height: 1.3rem;
+        margin-top: 20px;
       }
       button {
         background-color: #4e90f1;
@@ -118,6 +123,7 @@ textarea {
         justify-content: center;
         line-height: 1.25;
         text-decoration: none;
+        width: 100%;
       }
       ul {
         align-items: center;
@@ -158,23 +164,29 @@ textarea {
     .characters {
       margin-left: 35px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(285px, 2fr));
+      grid-template-columns: repeat(auto-fit, minmax(310px, 2fr));
       grid-column: 1 / span 3;
-      gap: 1em;
+      gap: 2em;
       justify-content: center;
     }
     .portrait {
       border: 1px solid #fafafa;
       display: flex;
-      cursor: pointer;
       height: 80px;
       width: 285px;
-      img {
-        min-height: 100%;
+      a {
+        display: flex;
+        color: #50535a;
+        text-decoration: none;
+        transition: 0.15s;
+      }
+      .manga-c {
+        width: 58px;
+        height: 87px;
       }
       p {
-        padding-left: 10px;
-        padding-top: 5px;
+        cursor: pointer;
+        padding-left: 5px;
       }
     }
   }
@@ -311,11 +323,11 @@ textarea {
     .container-c {
       margin-top: 12px;
       padding-left: 10px;
-      padding-bottom: 10px;
       .name-c {
         font: 15px;
         font-weight: 600;
         font-family: "Montserrat", sans-serif;
+        width: 150%;
         span {
           color: #69676d;
         }
@@ -349,38 +361,7 @@ textarea {
   margin: 0 auto;
   margin-top: 5em;
   .profile {
-    .color {
-      .color-b1 {
-        display: flex;
-        gap: 20px;
-        div {
-          cursor: pointer;
-          height: 50px;
-          width: 50px;
-        }
-        div:hover {
-          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-        }
-        .blue {
-          background-color: #4e90f1;
-        }
-        .green {
-          background-color: green;
-        }
-        .violet {
-          background-color: #ff2171;
-        }
-        .purple {
-          background-color: purple;
-        }
-        .red {
-          background-color: red;
-        }
-        .black {
-          background-color: #212529;
-        }
-      }
-    }
+    margin-top: 10px;
     .about {
       margin-top: 5em;
       textarea {
@@ -390,7 +371,7 @@ textarea {
   }
 }
 
-.banner {
+.banner-p {
   position: relative;
   p {
     color: #fff;
@@ -401,5 +382,17 @@ textarea {
   }
   img {
     max-width: 100%;
+  }
+}
+
+.character {
+  max-width: 1220px;
+  margin: 0 auto;
+  margin-top: 2em;
+  .char-c {
+    display: flex;
+    .char-i {
+      margin-left: 2em;
+    }
   }
 }

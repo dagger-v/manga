@@ -19,6 +19,20 @@ const userSchema = new mongoose.Schema({
     index: true,
   },
   password: String,
+  manga: [
+    {
+      title: String,
+      image: Number,
+      status: String,
+      createdAt: {
+        type: Date,
+        default: Date.now,
+      },
+    },
+  ],
+  profilePicture: {
+    type: String,
+  },
   createdAt: { type: Date, default: Date.now },
 });
 

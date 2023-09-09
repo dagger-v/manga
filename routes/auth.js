@@ -14,6 +14,9 @@ passport.serializeUser(function (user, cb) {
     cb(null, {
       id: user.id,
       username: user.username,
+      manga: user.manga,
+      profilePicture: user.profilePicture,
+      bannerPicture: user.bannerPicture,
       createdAt: user.createdAt,
     });
   });
@@ -52,6 +55,8 @@ router.post("/register", async (req, res) => {
         firstname: req.body.firstname,
         username: req.body.username,
         email: req.body.email,
+        profilePicture: "default",
+        bannerPicture: "default-b",
       },
       req.body.password
     );

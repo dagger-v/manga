@@ -21,6 +21,15 @@
   <body>
     <%- include("navbar"); -%>
     <div class="settings">
+      <div class="collection">
+        <div class="bar">
+          <div class="tabbed">
+            <a href="/users/settings">Basic Settings</a>
+            <a href="/users/profile-picture">Profile Picture</a>
+            <a href="/users/banner-picture">Update Banner</a>
+          </div>
+        </div>
+      </div>
       <div class="profile">
         <div class="name">
           <h5>Username:</h5>
@@ -31,17 +40,6 @@
           %> <% const member = new Date(created) %>
           <h5>Member Since:</h5>
           <p><%= member.toLocaleDateString("en-US", options) %></p>
-        </div>
-        <div class="color">
-          <p>Profile Color</p>
-          <div class="color-b1">
-            <div class="color-b2 blue"></div>
-            <div class="color-b2 green"></div>
-            <div class="color-b2 violet"></div>
-            <div class="color-b2 purple"></div>
-            <div class="color-b2 red"></div>
-            <div class="color-b2 black"></div>
-          </div>
         </div>
         <div class="about">
           <p>About</p>
@@ -78,7 +76,6 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
-
     <script src="/javascripts/app.js"></script>
   </body>
 </html>

@@ -23,105 +23,75 @@
     <div class="manga">
       <div class="cover">
         <div class="banner">
-          <img src="/images/manga-1.png" alt="manga" />
+          <img src="/images/manga-<%= book.id %>.png" alt="manga" />
           <% if (isAuthenticated) { %>
           <form action="" method="POST">
             <div>
-              <label for="title"></label>
+              <label for="title" hidden></label>
               <input
                 id="title"
                 type="text"
                 name="title"
-                value="TestTitle2"
+                value="<%= book.title %>"
+                hidden
+              />
+            </div>
+            <div>
+              <label for="image" hidden></label>
+              <input
+                id="image"
+                type="text"
+                name="image"
+                value="<%= book.id %>"
                 hidden
               />
             </div>
             <div class="add">
               <button type="submit">Add to Library</button>
-              <span class="span-a">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item dropdown">
-                    <a
-                      class="nav-link dropdown-toggle"
-                      href="#"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a id="reading" class="dropdown-item" href="#"
-                          >Set as Reading</a
-                        >
-                      </li>
-                      <li>
-                        <a id="plan" class="dropdown-item" href="#"
-                          >Set as Planning</a
-                        >
-                      </li>
-                      <li>
-                        <a id="finished" class="dropdown-item" href="#"
-                          >Set as Finished</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </span>
-              <div id="favorite" class="favorite">
-                <img src="/images/icons/heart.png" alt="heart icon" />
-              </div>
             </div>
           </form>
           <% } %>
         </div>
         <div class="description">
-          <h1>Title</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-            maxime aliquam ea perferendis fuga ipsum, ab tenetur tempore velit
-            eaque ut veritatis ad incidunt doloremque exercitationem earum
-            laborum cupiditate officia! Amet qui explicabo fugiat at, quis
-            temporibus eum repellendus facilis dolorum veritatis illo aliquam
-            vel? Unde incidunt rem magnam sapiente, quasi temporibus. Corporis
-            sit nulla dolorum beatae illo nemo quas!
-          </p>
+          <h1><%= book.title %></h1>
+          <p><%= book.summary %></p>
         </div>
       </div>
       <div class="info-m1">
         <div class="information">
-          <p><span class="key">Type: </span><span class="value">Manga</span></p>
+          <p>
+            <span class="key">Type: </span
+            ><span class="value"><%= book.type %></span>
+          </p>
           <p>
             <span class="key">Author: </span
-            ><span class="value">Aka Akasaka</span>
+            ><span class="value"><%= book.author %></span>
           </p>
           <p>
             <span class="key">Start Date: </span
-            ><span class="value">Apr 23, 2020</span>
+            ><span class="value"><%= book.releaseDate %></span>
           </p>
           <p>
             <span class="key">Genre: </span
-            ><span class="value"
-              >Drama, Mystery, Psychological, Supernatural</span
-            >
+            ><span class="value"><%= book.genre %></span>
           </p>
         </div>
       </div>
       <div class="data-m1">
         <h4>Characters</h4>
         <div class="characters">
+          <% book.characters.forEach(character => { %>
           <div class="portrait">
-            <img class="manga-c" src="/images/manga-c-1.png" alt="" />
-            <p>Ai Hoshino</p>
+            <a href="/character/<%= character.id %>">
+              <img
+                class="manga-c"
+                src="/images/characters/manga-c-<%= character.id %>.png"
+                alt="manga"
+              />
+              <p><%= character.name %></p>
+            </a>
           </div>
-          <div class="portrait"></div>
-          <div class="portrait"></div>
-          <div class="portrait"></div>
-          <div class="portrait"></div>
-          <div class="portrait"></div>
-          <div class="portrait"></div>
-          <div class="portrait"></div>
+          <% }); %>
         </div>
       </div>
     </div>

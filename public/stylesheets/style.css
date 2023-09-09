@@ -2,6 +2,10 @@ p {
   font-family: "Poppins", sans-serif;
 }
 
+#message {
+  display: none;
+}
+
 textarea {
   color: #9299a9 !important;
   resize: none !important;
@@ -99,6 +103,7 @@ textarea {
   height: 35px;
   justify-content: center;
   line-height: 1.3rem;
+  margin-top: 20px;
 }
 .manga .cover .banner button {
   background-color: #4e90f1;
@@ -119,6 +124,7 @@ textarea {
   justify-content: center;
   line-height: 1.25;
   text-decoration: none;
+  width: 100%;
 }
 .manga .cover .banner ul {
   align-items: center;
@@ -158,24 +164,30 @@ textarea {
 .manga .data-m1 .characters {
   margin-left: 35px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(285px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(310px, 2fr));
   grid-column: 1/span 3;
-  gap: 1em;
+  gap: 2em;
   justify-content: center;
 }
 .manga .data-m1 .portrait {
   border: 1px solid #fafafa;
   display: flex;
-  cursor: pointer;
   height: 80px;
   width: 285px;
 }
-.manga .data-m1 .portrait img {
-  min-height: 100%;
+.manga .data-m1 .portrait a {
+  display: flex;
+  color: #50535a;
+  text-decoration: none;
+  transition: 0.15s;
+}
+.manga .data-m1 .portrait .manga-c {
+  width: 58px;
+  height: 87px;
 }
 .manga .data-m1 .portrait p {
-  padding-left: 10px;
-  padding-top: 5px;
+  cursor: pointer;
+  padding-left: 5px;
 }
 .manga .info-m1 {
   float: left;
@@ -307,12 +319,12 @@ textarea {
 .status .status-c .container-c {
   margin-top: 12px;
   padding-left: 10px;
-  padding-bottom: 10px;
 }
 .status .status-c .container-c .name-c {
   font: 15px;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
+  width: 150%;
 }
 .status .status-c .container-c .name-c span {
   color: #69676d;
@@ -343,35 +355,8 @@ textarea {
   margin: 0 auto;
   margin-top: 5em;
 }
-.settings .profile .color .color-b1 {
-  display: flex;
-  gap: 20px;
-}
-.settings .profile .color .color-b1 div {
-  cursor: pointer;
-  height: 50px;
-  width: 50px;
-}
-.settings .profile .color .color-b1 div:hover {
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-}
-.settings .profile .color .color-b1 .blue {
-  background-color: #4e90f1;
-}
-.settings .profile .color .color-b1 .green {
-  background-color: green;
-}
-.settings .profile .color .color-b1 .violet {
-  background-color: #ff2171;
-}
-.settings .profile .color .color-b1 .purple {
-  background-color: purple;
-}
-.settings .profile .color .color-b1 .red {
-  background-color: red;
-}
-.settings .profile .color .color-b1 .black {
-  background-color: #212529;
+.settings .profile {
+  margin-top: 10px;
 }
 .settings .profile .about {
   margin-top: 5em;
@@ -380,18 +365,30 @@ textarea {
   width: 50%;
 }
 
-.banner {
+.banner-p {
   position: relative;
 }
-.banner p {
+.banner-p p {
   color: #fff;
   position: absolute;
   bottom: 8px;
   left: 120px;
   font-size: 24px;
 }
-.banner img {
+.banner-p img {
   max-width: 100%;
+}
+
+.character {
+  max-width: 1220px;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+.character .char-c {
+  display: flex;
+}
+.character .char-c .char-i {
+  margin-left: 2em;
 }
 
 /*# sourceMappingURL=style.css.map */

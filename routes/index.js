@@ -1,73 +1,68 @@
 var express = require("express");
 var router = express.Router();
 
-const Collection = require("../models/Collection");
+const User = require("../models/User");
 
-const { body, validationResult } = require("express-validator");
-
-const async = require("async");
+const data = require("../data");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Taka" });
+  res.render("index", { title: "Taka", data });
 });
 
-router.get("/manga/:title", function (req, res, next) {
-  res.render("manga");
+router.get("/manga/:title", async function (req, res, next) {
+  const bookId = parseInt(req.params.title);
+  const book = data.PopularManga.find((book) => book.id === bookId);
+  res.render("manga", { book });
 });
 
-router.post("/manga/:title", [
-  // Validate and sanitize fields.
-  body("title", "Title must not be empty.")
-    .trim()
-    .isLength({ min: 1 })
-    .escape(),
-  // Process request after validation and sanitization.
-  (req, res, next) => {
-    // Extract the validation errors from a request.
-    const errors = validationResult(req);
-
-    const collection = new Collection({
-      title: req.body.title,
-      author: req.user.username,
-    });
-
-    if (!errors.isEmpty()) {
-      // Get all authors and genres for form.
-      async.parallel((err, results) => {
-        if (err) {
-          return next(err);
-        }
-        res.render("manga", {
-          title,
-          author,
-          createdAt,
-          errors: errors.array(),
-        });
-      });
-      return;
+router.post("/manga/:title", async (req, res, next) => {
+  const bookId = parseInt(req.params.title);
+  try {
+    const user = await User.findById(req.user.id);
+    if (!user) {
+      return res.status(404).send("User not found");
     }
 
-    // Data from form is valid. Save statue update.
-    collection.save((err) => {
-      if (err) {
-        return next(err);
-      }
-      res.redirect("/users/profile");
-    });
-  },
-]);
+    const existingBook = user.manga.find(
+      (book) => book.title === req.body.title
+    );
 
-router.get("/search/popular", function (req, res, next) {
-  res.render("popular", { title: "Popular" });
+    if (existingBook) {
+      return res.redirect(`/manga/${bookId}`);
+    }
+
+    const newBook = {
+      title: req.body.title,
+      image: req.body.image,
+    };
+
+    user.manga.push(newBook);
+
+    await user.save();
+
+    res.redirect("/");
+  } catch (error) {
+    res.status(500).send("Error adding book");
+  }
 });
 
-router.get("/search/trending", function (req, res, next) {
-  res.render("trending", { title: "Trending" });
-});
+router.get("/character/:character", function (req, res, next) {
+  const characterId = parseInt(req.params.character);
+  const bookWithCharacter = data.PopularManga.find((book) =>
+    book.characters.some((character) => character.id === characterId)
+  );
 
-router.get("/search/staff", function (req, res, next) {
-  res.render("staff", { title: "Staff Favorites" });
+  if (!bookWithCharacter) {
+    //if ID is not found in any book
+    return res.status(404).send("Character not found");
+  }
+
+  //find the specific character within the book
+  const character = bookWithCharacter.characters.find(
+    (char) => char.id === characterId
+  );
+  res.render("character", { character });
 });
 
 module.exports = router;
