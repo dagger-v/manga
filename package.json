@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nodemon ./bin/www",
     "scss": "sass --watch src/scss/main.scss public/stylesheets/style.css",
-    "dev": "concurrently --kill-others \"npm run start\" \"npm run scss\""
+    "dev": "concurrently --kill-others \"npm run start\" \"npm run scss\"",
+    "build": "node ./bin/www"
   },
   "dependencies": {
     "async": "^3.2.4",
@@ -21,7 +22,7 @@
     "express-validator": "^7.0.1",
     "he": "^1.2.0",
     "http-errors": "~1.6.3",
-    "mongoose": "^6.10.4",
+    "mongoose": "^7.5.0",
     "mongoose-unique-validator": "^4.0.0",
     "morgan": "~1.9.1",
     "multer": "^1.4.5-lts.1",
